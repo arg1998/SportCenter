@@ -1,0 +1,128 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ir.mafiaaa.sportcenter.Formation352">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/spinner"
+        android:adjustViewBounds="false"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
+        android:src="@drawable/field" />
+
+    <ImageView
+        android:id="@+id/num1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="40dp"
+        android:src="@drawable/ic_player"
+        android:onClick="Num1"/>
+
+    <ImageView
+        android:id="@+id/num2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="110dp"
+        android:layout_marginStart="60dp"
+        android:src="@drawable/ic_player"
+        android:onClick="Num2"/>
+
+    <ImageView
+        android:id="@+id/num3"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="110dp"
+        android:layout_marginEnd="60dp"
+        android:src="@drawable/ic_player"
+        android:onClick="Num3"/>
+
+    <ImageView
+        android:id="@+id/num4"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignBottom="@+id/num1"
+        android:layout_marginBottom="100dp"
+        android:src="@drawable/ic_player"
+        android:onClick="Num4"/>
+
+    <ImageView
+        android:id="@+id/num5"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@+id/num4"
+        android:layout_toLeftOf="@+id/num4"
+        android:layout_marginBottom="90dp"
+        android:src="@drawable/ic_player"
+        android:onClick="Num5"/>
+
+    <ImageView
+        android:id="@+id/num6"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@+id/num4"
+        android:layout_toRightOf="@+id/num4"
+        android:layout_marginBottom="90dp"
+        android:src="@drawable/ic_player"
+        android:onClick="Num6"/>
+
+    <ImageView
+        android:id="@+id/num7"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@+id/num5"
+        android:layout_toLeftOf="@+id/num5"
+        android:layout_marginBottom="70dp"
+        android:src="@drawable/ic_player"
+        android:onClick="Num7"/>
+
+    <ImageView
+        android:id="@+id/num8"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignBottom="@+id/num5"
+        android:layout_marginBottom="70dp"
+        android:src="@drawable/ic_player"
+        android:onClick="Num8"/>
+
+    <ImageView
+        android:id="@+id/num9"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@+id/num6"
+        android:layout_toRightOf="@+id/num6"
+        android:layout_marginBottom="70dp"
+        android:src="@drawable/ic_player"
+        android:onClick="Num9"/>
+
+    <ImageView
+        android:id="@+id/num10"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@+id/num8"
+        android:layout_toLeftOf="@+id/num8"
+        android:layout_marginBottom="100dp"
+        android:src="@drawable/ic_player"
+        android:onClick="Num10"/>
+
+    <ImageView
+        android:id="@+id/num11"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@+id/num8"
+        android:layout_toRightOf="@+id/num8"
+        android:layout_marginBottom="100dp"
+        android:src="@drawable/ic_player"
+        android:onClick="Num11"/>
+
+</RelativeLayout>
