@@ -4,17 +4,17 @@ import java.util.HashMap;
 import java.util.List;
 
 
-public class Fromation {
+public class Formation {
 
-    public HashMap<Integer, String> form_352;
+    public static HashMap<Integer, String> form_352;
 
-    public HashMap<Integer, String> form_433;
+    public static HashMap<Integer, String> form_433;
 
-    public HashMap<Integer, String> form_442;
+    public static HashMap<Integer, String> form_442;
 
-    public HashMap<Integer, String> form_532;
+    public static  HashMap<Integer, String> form_532;
 
-    public Fromation(){
+    public Formation(){
 
         form_352 = new HashMap<>();
         form_352.put(1,"دروازه بان");
