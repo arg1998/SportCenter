@@ -1,0 +1,113 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ir.mafiaaa.sportcenter.SignUp"
+    android:id="@+id/SignUp">
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/FName_TextInputLayout"
+        android:layout_margin="@dimen/distant_EditText">
+
+        <android.support.v7.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/FName_TextField"
+            android:hint="@string/Name"
+            android:inputType="textPersonName"/>
+
+
+    </android.support.design.widget.TextInputLayout>
+
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/LName_TextInputLayout"
+        android:layout_below="@+id/FName_TextInputLayout"
+        android:layout_margin="@dimen/distant_EditText">
+
+        <android.support.v7.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/LName_TextField"
+            android:hint="@string/lastName"
+            android:inputType="textPersonName"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/EmailS_TextInputLayout"
+        android:layout_below="@+id/LName_TextInputLayout"
+        android:layout_margin="@dimen/distant_EditText">
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/EmailS_TextField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/EmailS"
+            android:inputType="textEmailAddress" />
+
+    </android.support.design.widget.TextInputLayout>
+
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/PassS_TextInputLayout"
+        android:layout_below="@+id/EmailS_TextInputLayout"
+        android:layout_margin="@dimen/distant_EditText">
+
+        <android.support.v7.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/PassS_TextField"
+            android:hint="@string/password"
+            android:inputType="textPassword"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rePass_TextInputLayout"
+        android:layout_below="@+id/PassS_TextInputLayout"
+        android:layout_margin="@dimen/distant_EditText">
+
+        <android.support.v7.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rePass_TextField"
+            android:hint="@string/rePass"
+            android:inputType="textPassword"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/CH_laws"
+        android:text="@string/laws"
+        android:layout_below="@+id/rePass_TextInputLayout"
+        android:layout_margin="@dimen/distant_EditText"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_signUp"
+        android:layout_below="@+id/CH_laws"
+        android:text="@string/SignUp"
+        android:layout_margin="@dimen/distant_EditText"/>
+
+
+
+
+
+
+
+</RelativeLayout>

@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">Sport Center</string>
+    <string name="title_activity_register">Register</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Email">ایمیل</string>
+    <string name="password">رمز عبور</string>
+    <string name="Name">نام</string>
+    <string name="lastName">نام خانوادگی</string>
+    <string name="EmailS">ایمیل</string>
+    <string name="rePass">تکرار رمز عبور</string>
+    <string name="laws">قوانین را مطالعه کردم و میپذیرم</string>
+    <string name="SignUp">ثبت نام</string>
+    <string name="Login">ورود</string>
+    <string name="my_image" > Team </string>
+    <string name="open_drawer" > open </string>
+    <string name="close_drawer" > close</string>
 </resources>

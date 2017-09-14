@@ -1,0 +1,61 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="ir.mafiaaa.sportcenter.Login"
+    android:id="@+id/LoginFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Email_TextInputLayout"
+        android:layout_margin="@dimen/distant_EditText">
+
+        <android.support.v7.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/Email_TextField"
+            android:hint="@string/Email"
+            android:inputType="textEmailAddress"/>
+
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Pass_TextInputLayout"
+        android:layout_below="@+id/Email_TextInputLayout"
+        app:passwordToggleEnabled="true"
+        app:counterOverflowTextAppearance="@style/CharacterOverflow"
+       android:layout_margin="@dimen/distant_EditText">
+
+        <android.support.v7.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/pass_TextField"
+            android:hint="@string/password"
+            android:inputType="textPassword"/>
+
+
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_Login"
+        android:layout_below="@+id/Pass_TextInputLayout"
+        android:text="@string/Login"
+        android:layout_margin="@dimen/distant_EditText"/>
+
+
+
+
+
+
+
+
+
+</RelativeLayout>
