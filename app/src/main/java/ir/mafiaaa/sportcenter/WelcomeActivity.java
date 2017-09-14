@@ -30,4 +30,9 @@ public class WelcomeActivity extends AppCompatActivity {
         });
 
     }
+
+    public void Formation(View view) {
+        Intent intent = new Intent(this , FormationActivity.class);
+        startActivity(intent);
+    }
 }
