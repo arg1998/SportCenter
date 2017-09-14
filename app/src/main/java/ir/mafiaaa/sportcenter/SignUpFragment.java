@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 
-public class SignUp extends Fragment {
+public class SignUpFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
 
     AppCompatEditText Name;

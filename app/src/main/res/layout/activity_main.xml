@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:design="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_main"
     android:layoutDirection="rtl"
     tools:context="ir.mafiaaa.sportcenter.Main">
@@ -11,5 +12,27 @@
     <include
         android:id="@+id/customToolBar"
         layout="@layout/toolbar" />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity ="bottom"
+        android:layout_alignParentBottom="true">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:background="@drawable/shadow"/>
+
+        <android.support.design.widget.BottomNavigationView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#3498db"
+            design:itemIconTint = "#ffff"
+            design:itemTextColor = "#fff"
+            android:id="@+id/NavBot"
+            design:menu = "@menu/menu_nav"/>
+
+    </FrameLayout>
+
 
 </RelativeLayout>

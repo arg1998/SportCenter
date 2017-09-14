@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
 
-public class Login extends Fragment {
+public class LoginFragment extends Fragment {
 
     static Activity act;
     AppCompatEditText email;

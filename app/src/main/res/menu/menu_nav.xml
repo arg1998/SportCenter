@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="predict"
+        android:icon="@drawable/crystal_ball"/>
+    <item
+        android:title="statistics"
+        android:icon="@drawable/bar_chart"/>
+    <item
+        android:title="home"
+        android:icon="@drawable/house_outline"/>
+    <item
+        android:title="cup"
+        android:icon="@drawable/trophy"/>
+
+
+</menu>
