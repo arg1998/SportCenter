@@ -22,7 +22,7 @@ import com.backtory.java.internal.BacktoryUser;
 import com.backtory.java.internal.LoginResponse;
 
 
-public class Login extends Fragment {
+public class LoginFragment extends Fragment {
 
     private void log(String s)
     {

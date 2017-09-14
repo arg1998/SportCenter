@@ -13,12 +13,13 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
-
 import com.backtory.java.HttpStatusCode;
 import com.backtory.java.internal.BacktoryCallBack;
 import com.backtory.java.internal.BacktoryResponse;
 import com.backtory.java.internal.BacktoryUser;
 
+public class SignUpFragment extends Fragment {
+    // TODO: Rename parameter arguments, choose names that match
 public class SignUp extends Fragment {
 
 

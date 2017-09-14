@@ -15,7 +15,7 @@
     <string name="laws">قوانین را مطالعه کردم و میپذیرم</string>
     <string name="SignUp">ثبت نام</string>
     <string name="Login">ورود</string>
-    <string name="my_image" > Team </string>
-    <string name="open_drawer" > open </string>
-    <string name="close_drawer" > close</string>
+    <string name="my_image"> Team </string>
+    <string name="open_drawer"> open </string>
+    <string name="close_drawer"> close</string>
 </resources>
