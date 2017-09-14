@@ -7,13 +7,28 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.AppCompatEditText;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
+
+import com.backtory.java.HttpStatusCode;
+import com.backtory.java.internal.BacktoryCallBack;
+import com.backtory.java.internal.BacktoryResponse;
+import com.backtory.java.internal.BacktoryUser;
+import com.backtory.java.internal.LoginResponse;
 
 
 public class Login extends Fragment {
+
+    private void log(String s)
+    {
+        Log.i("NoEmulators", s);
+    }
+
 
     static Activity act;
     AppCompatEditText email;
@@ -21,6 +36,10 @@ public class Login extends Fragment {
     RelativeLayout relativeLayout;
     TextInputLayout emailLayout;
     TextInputLayout passLayout;
+    Button btnLogin;
+
+
+    String password , emailAddress;
 
     // TODO: Rename and change types of parameters
 
@@ -40,6 +59,7 @@ public class Login extends Fragment {
         pass = (AppCompatEditText) rootView.findViewById(R.id.pass_TextField);
         passLayout = (TextInputLayout) rootView.findViewById(R.id.Pass_TextInputLayout);
         relativeLayout = (RelativeLayout) rootView.findViewById(R.id.LoginFragment);
+        btnLogin = (Button) rootView.findViewById(R.id.btn_Login);
 
         email.setOnFocusChangeListener(new View.OnFocusChangeListener(){
 
@@ -48,7 +68,7 @@ public class Login extends Fragment {
                 if (email.getText().toString().isEmpty()){
 
                     emailLayout.setErrorEnabled(true);
-                    emailLayout.setError("please enter your username");
+                    emailLayout.setError("ایمیل خود را وارد کنید");
 
                 }else {
                     emailLayout.setErrorEnabled(false);
@@ -58,6 +78,11 @@ public class Login extends Fragment {
 
 
         });
+
+        if (BacktoryUser.getCurrentUser() != null)
+        {
+            log(BacktoryUser.getCurrentUser().getUserId());
+        }
 
         email.addTextChangedListener(new TextWatcher() {
             @Override
@@ -71,7 +96,7 @@ public class Login extends Fragment {
                 if (email.getText().toString().isEmpty()){
 
                     emailLayout.setErrorEnabled(true);
-                    emailLayout.setError("please enter your username");
+                    emailLayout.setError("ایمیل خود را وارد کنید");
 
                 }else {
                     emailLayout.setErrorEnabled(false);
@@ -85,13 +110,51 @@ public class Login extends Fragment {
             }
         });
 
-        passLayout.setCounterEnabled(true);
-        passLayout.setCounterMaxLength(8);
 
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (initStrings())
+                {
+                    BacktoryUser.loginInBackground(emailAddress, SecurityManager.hash_to_SHA1(password), new BacktoryCallBack<LoginResponse>() {
+                        @Override
+                        public void onResponse(BacktoryResponse<LoginResponse> response) {
+                            if (response.isSuccessful())
+                            {
+                                btnLogin.setEnabled(false);
+                                Toast.makeText(getContext() , BacktoryUser.getCurrentUser().getFirstName() + "ورود موفقیت امیز بود ، خوش امدی " , Toast.LENGTH_SHORT).show();
+                            }
+                            else if(response.code() == HttpStatusCode.Unauthorized.code())
+                            {
+                                Toast.makeText(getContext() , "ایمیل و یا رمز عبور اشتباه است" , Toast.LENGTH_SHORT).show();
+                            }
+                            else
+                            {
+                                Toast.makeText(getContext() , "مشکلی پیش امده، اتصال ب اینترنت و یا تایید ایمیل میتوانند باعث این مشکل باشند" , Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+                }
+            }
+        });
 
         // Inflate the layout for this fragment
         return rootView;
 
+    }
+
+    private boolean initStrings()
+    {
+        password = pass.getText().toString();
+        emailAddress = email.getText().toString();
+
+
+        if (emailAddress.equals("") || password.equals(""))
+        {
+            Toast.makeText(getContext() ,"تمامی فیلد هارو پر کنید" , Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        return true;
     }
 
 }
