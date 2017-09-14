@@ -19,8 +19,6 @@ import com.backtory.java.internal.BacktoryResponse;
 import com.backtory.java.internal.BacktoryUser;
 
 public class SignUpFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-public class SignUp extends Fragment {
 
 
      private void log(String s)
