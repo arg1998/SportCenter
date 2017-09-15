@@ -9,21 +9,25 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutCompat;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.LinearLayout;
 
 public class Main extends AppCompatActivity {
 
 
-    Toolbar toolbar;
+
     BottomNavigationView bottomBar;
     //nav Drawer
     DrawerLayout drawerLayout;
     NavigationView navigationView;
+
+    //fragments
+    HomeFragment homeFragment;
+    CupFragment cupFragment;
+    WizardFragment wizardFragment;
+    ChartsFragment chartsFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,11 +38,16 @@ public class Main extends AppCompatActivity {
         Log.d("shima" , "id:" + R.id.home) ;
         Log.d("shima" , "id:" + R.id.statistics) ;
         bottomBar = (BottomNavigationView) findViewById(R.id.bottomBar);
+        drawerLayout = (DrawerLayout) findViewById(R.id.navDrawerLayout);
+        navigationView = (NavigationView) findViewById(R.id.navView);
 
-        toolbar = (Toolbar) findViewById(R.id.customToolBar);
-        setSupportActionBar(toolbar);
 
-        HomeFragment homeFragment = new HomeFragment();
+        //init fragment
+        homeFragment = new HomeFragment(this , drawerLayout);
+        cupFragment = new CupFragment(this);
+        wizardFragment = new WizardFragment(this);
+        chartsFragment = new ChartsFragment(this);
+
         getSupportFragmentManager().beginTransaction().add(R.id.main_container,homeFragment).commit();
 
         bottomBar.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -48,19 +57,15 @@ public class Main extends AppCompatActivity {
                 Log.d("shima" , "id:" + id) ;
                 switch (id){
                     case R.id.cup:
-                        CupFragment cupFragment = new CupFragment();
                         getSupportFragmentManager().beginTransaction().replace(R.id.main_container,cupFragment).commit();
                         break;
                     case R.id.home:
-                        HomeFragment homeFragment = new HomeFragment();
                         getSupportFragmentManager().beginTransaction().replace(R.id.main_container,homeFragment).commit();
                         break;
                     case R.id.predict:
-                        WizardFragment wizardFragment = new WizardFragment();
                         getSupportFragmentManager().beginTransaction().replace(R.id.main_container,wizardFragment).commit();
                         break;
                     case R.id.statistics:
-                        ChartsFragment chartsFragment = new ChartsFragment();
                         getSupportFragmentManager().beginTransaction().replace(R.id.main_container,chartsFragment).commit();
                         break;
                 }
@@ -75,12 +80,7 @@ public class Main extends AppCompatActivity {
 
 
 
-        drawerLayout = (DrawerLayout) findViewById(R.id.navDrawerLayout);
-        navigationView = (NavigationView) findViewById(R.id.navView);
 
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this ,drawerLayout , toolbar ,R.string.open_drawer , R.string.close_drawer);
-        drawerLayout.addDrawerListener(toggle);
-        toggle.syncState();
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
