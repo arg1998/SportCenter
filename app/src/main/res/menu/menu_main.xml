@@ -17,7 +17,7 @@
             android:id="@+id/draftId"
             android:icon="@drawable/draft"/>
         <item
-            android:title="خروج"
+            android:title="خروج از حساب کاربری"
             android:id="@+id/LogOut"/>
 
     </group>

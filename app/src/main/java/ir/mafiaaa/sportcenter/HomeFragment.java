@@ -33,8 +33,6 @@ public class HomeFragment extends Fragment {
         this.drawerLayout = drawerLayout;
     }
 
-
-
     private Toolbar toolbar;
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;

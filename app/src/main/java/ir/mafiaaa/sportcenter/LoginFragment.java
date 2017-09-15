@@ -18,9 +18,13 @@ import android.widget.Toast;
 
 import com.backtory.java.HttpStatusCode;
 import com.backtory.java.internal.BacktoryCallBack;
+import com.backtory.java.internal.BacktoryObject;
+import com.backtory.java.internal.BacktoryQuery;
 import com.backtory.java.internal.BacktoryResponse;
 import com.backtory.java.internal.BacktoryUser;
 import com.backtory.java.internal.LoginResponse;
+
+import java.util.List;
 
 
 public class LoginFragment extends Fragment {
@@ -120,8 +124,20 @@ public class LoginFragment extends Fragment {
                             if (response.isSuccessful()) {
                                 btnLogin.setEnabled(false);
                                 Toast.makeText(getContext(), BacktoryUser.getCurrentUser().getFirstName() + "ورود موفقیت امیز بود ، خوش امدی ", Toast.LENGTH_SHORT).show();
-                                startNextActivity();
 
+                                BacktoryQuery query = new BacktoryQuery("users");
+                                query.whereEqualTo("userid", BacktoryUser.getCurrentUser().getUserId());
+                                query.findInBackground(new BacktoryCallBack<List<BacktoryObject>>() {
+                                    @Override
+                                    public void onResponse(BacktoryResponse<List<BacktoryObject>> backtoryResponse) {
+                                        if (backtoryResponse.isSuccessful()) {
+                                            String userFaveTeam = backtoryResponse.body().get(0).getString("favoriteTeam");
+                                            startNextActivity();
+                                        } else {
+                                            Toast.makeText(getContext(), "مشکلی پیش امده، ارتباط با دیتابیس برقرار نیست", Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
+                                });
                             } else if (response.code() == HttpStatusCode.Unauthorized.code()) {
                                 Toast.makeText(getContext(), "ایمیل و یا رمز عبور اشتباه است و یا نیاز به تایید ایمیل دارید", Toast.LENGTH_SHORT).show();
                             } else {

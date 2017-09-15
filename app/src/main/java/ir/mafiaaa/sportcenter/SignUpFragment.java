@@ -11,9 +11,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.RelativeLayout;
+import android.widget.Spinner;
 import android.widget.Toast;
 import com.backtory.java.HttpStatusCode;
 import com.backtory.java.internal.BacktoryCallBack;
+import com.backtory.java.internal.BacktoryObject;
 import com.backtory.java.internal.BacktoryResponse;
 import com.backtory.java.internal.BacktoryUser;
 
@@ -31,6 +33,7 @@ public class SignUpFragment extends Fragment {
     AppCompatEditText Pass;
     AppCompatEditText rePass;
     CheckBox checkbox_larws;
+    Spinner favoriteTeam;
     TextInputLayout nameLayout;
     TextInputLayout lNameLayout;
     TextInputLayout emailLayout;
@@ -40,7 +43,7 @@ public class SignUpFragment extends Fragment {
 
     private Button signUp;
 
-    String f_name , l_name , pass , email , repass;
+    String f_name , l_name , pass , email , repass , faveTeam;
 
 
     @Override
@@ -55,6 +58,7 @@ public class SignUpFragment extends Fragment {
         Pass = (AppCompatEditText) root.findViewById(R.id.PassS_TextField);
         rePass = (AppCompatEditText) root.findViewById(R.id.rePass_TextField);
         checkbox_larws = (CheckBox) root.findViewById(R.id.CH_laws);
+        favoriteTeam = (Spinner) root.findViewById(R.id.favorite_team);
         nameLayout = (TextInputLayout) root.findViewById(R.id.FName_TextInputLayout);
         lNameLayout = (TextInputLayout) root.findViewById(R.id.LName_TextInputLayout);
         emailLayout= (TextInputLayout) root.findViewById(R.id.Email_TextInputLayout);
@@ -89,8 +93,28 @@ public class SignUpFragment extends Fragment {
                         {
                             if (response.isSuccessful())
                             {
-                                Toast.makeText(getContext() , "ایمیل خود را چک کنید و بعد ورود کنید" , Toast.LENGTH_SHORT).show();
-                                signUp.setText("ایمیل خود را چک کنید");
+                                BacktoryObject object = new BacktoryObject("users");
+                                object.put("userid" , BacktoryUser.getCurrentUser().getUserId());
+                                object.put("username" , BacktoryUser.getCurrentUser().getUsername());
+                                object.put("favoriteTeam" , faveTeam);
+                                object.saveInBackground(new BacktoryCallBack<Void>() {
+                                    @Override
+                                    public void onResponse(BacktoryResponse<Void> backtoryResponse) {
+                                        if (backtoryResponse.isSuccessful())
+                                        {
+                                            Toast.makeText(getContext() , "ایمیل خود را چک کنید و بعد ورود کنید" , Toast.LENGTH_SHORT).show();
+                                            signUp.setText("ایمیل خود را چک کنید");
+                                        }
+                                        else
+                                        {
+                                            Toast.makeText(getContext() , "مشکلی پیش امده، ارتباط با دیتابی برقرا نیست" , Toast.LENGTH_SHORT).show();
+                                            signUp.setText("مشکلی بوجود امده");
+                                        }
+                                    }
+                                });
+
+
+
                             }
                             else if (response.code() == HttpStatusCode.Conflict.code())
                             {
@@ -120,10 +144,10 @@ public class SignUpFragment extends Fragment {
         pass = Pass.getText().toString();
         repass = rePass.getText().toString();
         email = Email.getText().toString();
+        faveTeam = favoriteTeam.getSelectedItem().toString();
 
 
-
-        if (f_name.equals("") || l_name.equals("") || pass.equals("") || email.equals(""))
+        if (f_name.equals("") || l_name.equals("") || pass.equals("") || email.equals("") || faveTeam.startsWith("انتخاب"))
         {
             Toast.makeText(getContext() , "تمامی فیلد هارا پر کنید" , Toast.LENGTH_SHORT).show();
             return false;

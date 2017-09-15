@@ -140,7 +140,10 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
 
         int id = item.getItemId();
         if(id == R.id.LogOut){
-            Toast.makeText(getApplicationContext(),"Hiii" , Toast.LENGTH_LONG).show();
+            BacktoryUser.logout();
+            Intent intent = new Intent(this , Register.class);
+            startActivity(intent);
+            this.finish();
         }
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
