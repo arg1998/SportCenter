@@ -1,5 +1,7 @@
 package ir.mafiaaa.sportcenter;
 
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -15,7 +17,7 @@ public class Main extends AppCompatActivity {
 
 
     Toolbar toolbar;
-
+    BottomNavigationView bottomBar;
     //nav Drawer
     DrawerLayout drawerLayout;
     NavigationView navigationView;
@@ -25,10 +27,17 @@ public class Main extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.navigation_drawer);
 
+        bottomBar = (BottomNavigationView) findViewById(R.id.bottomBar);
+
         toolbar = (Toolbar) findViewById(R.id.customToolBar);
         setSupportActionBar(toolbar);
 
-
+        bottomBar.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                return false;
+            }
+        });
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {

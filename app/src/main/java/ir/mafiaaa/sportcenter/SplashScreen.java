@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.backtory.java.internal.BacktoryUser;
+
 import ir.mafiaaa.sportcenter.R;
 import ir.mafiaaa.sportcenter.WelcomeActivity;
 
@@ -40,10 +42,23 @@ public class SplashScreen extends Activity {
                         sleep(200);
                         waited += 100;
                     }
-                    Intent intent = new Intent(SplashScreen.this,
-                            WelcomeActivity.class);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                    startActivity(intent);
+
+                    BacktoryUser me = BacktoryUser.getCurrentUser();
+
+                    if (me == null)
+                    {
+                        Intent intent = new Intent(SplashScreen.this,
+                                WelcomeActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                        startActivity(intent);
+                    }
+                    else
+                    {
+                        Intent intent = new Intent(SplashScreen.this,
+                                Main.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                        startActivity(intent);
+                    }
                     SplashScreen.this.finish();
                 } catch (InterruptedException e) {
                     // do nothing

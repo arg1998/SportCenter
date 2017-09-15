@@ -29,7 +29,7 @@
             android:background="#3498db"
             design:itemIconTint = "#ffff"
             design:itemTextColor = "#fff"
-            android:id="@+id/NavBot"
+            android:id="@+id/bottomBar"
             design:menu = "@menu/menu_nav"/>
 
     </FrameLayout>
