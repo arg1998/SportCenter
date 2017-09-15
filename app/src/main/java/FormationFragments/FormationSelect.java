@@ -14,9 +14,10 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
+import ir.mafiaaa.sportcenter.ListItem;
 import ir.mafiaaa.sportcenter.R;
 import ir.mafiaaa.sportcenter.RecyclerAdapter;
-
+import ir.mafiaaa.sportcenter.RecyclerFormationAdapter;
 
 
 public class FormationSelect extends Fragment {
@@ -24,7 +25,8 @@ public class FormationSelect extends Fragment {
     private OnFragmentInteractionListener mListener;
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
-    private List<ListItemFormation> listItems;
+    private List<ListItem> listItems;
+
 
     public FormationSelect() {
         // Required empty public constructor
@@ -45,7 +47,7 @@ public class FormationSelect extends Fragment {
 
         for(int i =0;i<=10; i++ ){
 
-            ListItemFormation listItem = new ListItemFormation(
+            ListItem listItem = new ListItem(
                     "heading" + (i+1),
                     "Loren ipsum dummy text"
             );
