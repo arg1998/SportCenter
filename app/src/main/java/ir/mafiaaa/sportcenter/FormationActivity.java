@@ -31,7 +31,7 @@ public class FormationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formation);
 
-        formation352 = new Formation352(this);
+        formation352 = new Formation352();
 
         formation433 = new Formation433();
 
