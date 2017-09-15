@@ -2,17 +2,20 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/predict"
         android:title="predict"
         android:icon="@drawable/crystal_ball"/>
     <item
+        android:id="@+id/statistics"
         android:title="statistics"
         android:icon="@drawable/bar_chart"/>
     <item
+        android:id="@+id/home"
         android:title="home"
         android:icon="@drawable/house_outline"/>
     <item
+        android:id="@+id/cup"
         android:title="cup"
         android:icon="@drawable/trophy"/>
-
 
 </menu>

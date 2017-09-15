@@ -9,9 +9,12 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutCompat;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.LinearLayout;
 
 public class Main extends AppCompatActivity {
 
@@ -26,16 +29,42 @@ public class Main extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.navigation_drawer);
-
+        Log.d("shima" , "id:" + R.id.cup) ;
+        Log.d("shima" , "id:" + R.id.predict) ;
+        Log.d("shima" , "id:" + R.id.home) ;
+        Log.d("shima" , "id:" + R.id.statistics) ;
         bottomBar = (BottomNavigationView) findViewById(R.id.bottomBar);
 
         toolbar = (Toolbar) findViewById(R.id.customToolBar);
         setSupportActionBar(toolbar);
 
+        HomeFragment homeFragment = new HomeFragment();
+        getSupportFragmentManager().beginTransaction().add(R.id.main_container,homeFragment).commit();
+
         bottomBar.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                return false;
+                int id = item.getItemId();
+                Log.d("shima" , "id:" + id) ;
+                switch (id){
+                    case R.id.cup:
+                        CupFragment cupFragment = new CupFragment();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_container,cupFragment).commit();
+                        break;
+                    case R.id.home:
+                        HomeFragment homeFragment = new HomeFragment();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_container,homeFragment).commit();
+                        break;
+                    case R.id.predict:
+                        WizardFragment wizardFragment = new WizardFragment();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_container,wizardFragment).commit();
+                        break;
+                    case R.id.statistics:
+                        ChartsFragment chartsFragment = new ChartsFragment();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_container,chartsFragment).commit();
+                        break;
+                }
+                return true;
             }
         });
 
