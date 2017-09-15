@@ -5,8 +5,6 @@ import android.graphics.BitmapFactory;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Objects;
-
 
 /**
  * Created by ARG on 9/15/2017 - 9:52 AM
