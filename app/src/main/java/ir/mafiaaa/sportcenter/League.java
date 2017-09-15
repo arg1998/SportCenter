@@ -21,6 +21,7 @@ public class League {
     Context context;
     private ArrayList<Team> teams;
     private Leagues leagueType;
+    public static ArrayList<Player> players;
 
     public Team padideh_mashad;
     public Team parse_jonobi_jam;
@@ -206,9 +207,10 @@ public class League {
 
 
     //// TODO: 9/15/2017 AMP
-    public  ArrayList<Player> getPlayer()
+    public static ArrayList<Player> getPlayer()
     {
-        final ArrayList<Player> players = new ArrayList<>();
+        players = new ArrayList<>();
+        players.clear();
         String mTeam = Team.getMyTeam().getName();
 
 
@@ -249,8 +251,6 @@ public class League {
                 }
             }
         });
-
-
 
         return players;
     }

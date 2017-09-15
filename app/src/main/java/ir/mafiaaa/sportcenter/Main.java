@@ -48,6 +48,8 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
 
         MyFavoriteTeamHandler favoriteTeamHandler = new MyFavoriteTeamHandler(this);
         favoriteTeamHandler.getMyFavoriteTeam();
+
+        League.getPlayer();
         BacktoryUser me = BacktoryUser.getCurrentUser();
 
         if (me == null)
