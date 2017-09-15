@@ -7,17 +7,17 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.backtory.java.internal.BacktoryUser;
 
-public class Main extends AppCompatActivity {
+public class Main extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
 
 
@@ -25,6 +25,7 @@ public class Main extends AppCompatActivity {
     //nav Drawer
     DrawerLayout drawerLayout;
     NavigationView navigationView;
+
 
     //fragments
     HomeFragment homeFragment;
@@ -61,6 +62,11 @@ public class Main extends AppCompatActivity {
             bottomBar = (BottomNavigationView) findViewById(R.id.bottomBar);
             drawerLayout = (DrawerLayout) findViewById(R.id.navDrawerLayout);
             navigationView = (NavigationView) findViewById(R.id.navView);
+
+
+            navigationView.setNavigationItemSelectedListener(this);
+
+
 
 
             //init fragment
@@ -127,6 +133,18 @@ public class Main extends AppCompatActivity {
         else {
             super.onBackPressed();
         }
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        int id = item.getItemId();
+        if(id == R.id.LogOut){
+            Toast.makeText(getApplicationContext(),"Hiii" , Toast.LENGTH_LONG).show();
+        }
+        drawerLayout.closeDrawer(GravityCompat.START);
+        return true;
+
     }
 }
 

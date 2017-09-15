@@ -16,6 +16,9 @@
             android:title="@string/support"
             android:id="@+id/draftId"
             android:icon="@drawable/draft"/>
+        <item
+            android:title="خروج"
+            android:id="@+id/LogOut"/>
 
     </group>
 
