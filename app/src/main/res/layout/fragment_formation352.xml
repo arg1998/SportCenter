@@ -125,4 +125,14 @@
         android:src="@drawable/ic_player"
         android:onClick="Num11"/>
 
+    <FrameLayout
+        android:id="@+id/rightCont"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/leftCont"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></FrameLayout>
+
 </RelativeLayout>
