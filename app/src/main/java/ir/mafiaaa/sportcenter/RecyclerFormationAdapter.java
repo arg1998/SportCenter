@@ -1,6 +1,7 @@
-package FormationFragments;
+package ir.mafiaaa.sportcenter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,19 +13,16 @@ import android.widget.Toast;
 
 import java.util.List;
 
-import FormationFragments.ListItemFormation;
-import ir.mafiaaa.sportcenter.R;
-
 /**
  * Created by Alvan on 9/15/2017.
  */
 
 public class RecyclerFormationAdapter extends RecyclerView.Adapter<RecyclerFormationAdapter.ViewHolder>{
 
-    private List<ListItemFormation> listItems;
+    private List<ListItem> listItems;
     private Context context;
 
-    public RecyclerFormationAdapter(List<ListItemFormation> listItems, Context context) {
+    public RecyclerFormationAdapter(List<ListItem> listItems, Context context) {
         this.listItems = listItems;
         this.context = context;
     }
@@ -32,15 +30,16 @@ public class RecyclerFormationAdapter extends RecyclerView.Adapter<RecyclerForma
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_formation, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item, parent, false);
 
         return new ViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
 
-        final ListItemFormation listItem = listItems.get(position);
+        final ListItem listItem = listItems.get(position);
+
 
         holder.textViewHead.setText(listItem.getHead());
         holder.textViewDesc.setText(listItem.getDesc());
@@ -51,9 +50,6 @@ public class RecyclerFormationAdapter extends RecyclerView.Adapter<RecyclerForma
                 Toast.makeText(context,"You clicked" +listItem.getHead(),Toast.LENGTH_LONG).show();
             }
         });
-
-
-
     }
 
     @Override
