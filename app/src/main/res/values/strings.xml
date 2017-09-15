@@ -18,4 +18,18 @@
     <string name="my_image"> Team </string>
     <string name="open_drawer"> open </string>
     <string name="close_drawer"> close</string>
+    <string name="description">description</string>
+    <string name="heading">heading</string>
+    <string name="favorite_team">تیم مورد علاقه</string>
+    <string-array name="favorite_team">
+        <item>پرسپولیس</item>
+        <item>استقلال</item>
+    </string-array>
+
+
+    <!-- Formations -->
+    <string name="Formation_352">ترکیب سه-پنج-دو</string>
+    <string name="Formation_433">ترکیب چهار-سه-سه</string>
+    <string name="Formation_442">ترکیب چهار-چهار-دو</string>
+    <string name="Formation_532">ترکیب پنج-سه-دو</string>
 </resources>

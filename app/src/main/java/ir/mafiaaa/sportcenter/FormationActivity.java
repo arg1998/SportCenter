@@ -33,10 +33,10 @@ public class FormationActivity extends AppCompatActivity {
 
         log("1");
 
-        arrayList.add("Formation : 3-5-2");
-        arrayList.add("Formation : 4-3-3");
-        arrayList.add("Formation : 4-4-2");
-        arrayList.add("Formation : 5-3-2");
+        arrayList.add(getResources().getString(R.string.Formation_352));
+        arrayList.add(getResources().getString(R.string.Formation_433));
+        arrayList.add(getResources().getString(R.string.Formation_442));
+        arrayList.add(getResources().getString(R.string.Formation_532));
 
         ArrayAdapter arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, arrayList);
 
@@ -58,25 +58,25 @@ public class FormationActivity extends AppCompatActivity {
 
                 switch (spinner.getSelectedItem().toString())
                 {
-                    case "Formation : 3-5-2":
+                    case "ترکیب سه-پنج-دو":
 
                         Formation352 formation352 = new Formation352();
                         getSupportFragmentManager().beginTransaction().replace( R.id.fragmentContainer, formation352).commit();
 
                         break;
-                    case "Formation : 4-3-3":
+                    case "ترکیب چهار-سه-سه":
 
                         Formation433 formation433 = new Formation433();
                         getSupportFragmentManager().beginTransaction().replace( R.id.fragmentContainer, formation433).commit();
 
                         break;
-                    case "Formation : 4-4-2":
+                    case "ترکیب چهار-چهار-دو":
 
                         Formation442 formation442 = new Formation442();
                         getSupportFragmentManager().beginTransaction().replace( R.id.fragmentContainer, formation442).commit();
 
                         break;
-                    case "Formation : 5-3-2":
+                    case "ترکیب پنج-سه-دو":
 
                         Formation532 formation532 = new Formation532();
                         getSupportFragmentManager().beginTransaction().replace( R.id.fragmentContainer, formation532).commit();

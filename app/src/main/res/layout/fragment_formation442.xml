@@ -2,6 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:textDirection="ltr"
+    android:layoutDirection="ltr"
     tools:context="FormationFragments.Formation442">
 
     <ImageView
@@ -13,123 +15,319 @@
         android:scaleType="fitXY"
         android:src="@drawable/field" />
 
-    <ImageView
+    <TextView
+        android:id="@+id/line"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/line2"/>
+
+    <RelativeLayout
         android:id="@+id/num1"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="40dp"
-        android:src="@drawable/ic_player"
-        android:onClick="Num1"/>
+        android:onClick="Num1">
 
-    <ImageView
+        <ImageView
+            android:id="@+id/img1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_player"/>
+        <TextView
+            android:id="@+id/n1"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:layout_below="@+id/img1"
+            android:textDirection="rtl"
+            android:text="لبسشی یشسی "
+            android:textAlignment="center"
+            android:ellipsize="middle"
+            android:textColor="#960002"/>
+    </RelativeLayout>
+
+    <RelativeLayout
         android:id="@+id/num2"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="110dp"
-        android:layout_marginStart="60dp"
-        android:src="@drawable/ic_player"
-        android:onClick="Num2"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/line"
+        android:layout_alignBottom="@+id/num1"
+        android:layout_marginBottom="70dp"
+        android:layout_marginRight="60dp"
+        android:onClick="Num2">
 
-    <ImageView
+        <ImageView
+            android:id="@+id/img2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_player"/>
+        <TextView
+            android:id="@+id/n2"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:layout_below="@+id/img2"
+            android:textDirection="rtl"
+            android:text="لبسشی یشسی "
+            android:textAlignment="center"
+            android:ellipsize="middle"
+            android:textColor="#960002"/>
+    </RelativeLayout>
+
+    <RelativeLayout
         android:id="@+id/num3"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="110dp"
-        android:layout_marginEnd="60dp"
-        android:src="@drawable/ic_player"
-        android:onClick="Num3"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/line"
+        android:layout_alignBottom="@+id/num1"
+        android:layout_marginBottom="70dp"
+        android:layout_marginLeft="60dp"
+        android:onClick="Num3">
 
-    <ImageView
+        <ImageView
+            android:id="@+id/img3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_player"/>
+        <TextView
+            android:id="@+id/n3"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:layout_below="@+id/img3"
+            android:textDirection="rtl"
+            android:text="لبسشی یشسی "
+            android:textAlignment="center"
+            android:ellipsize="middle"
+            android:textColor="#960002"/>
+    </RelativeLayout>
+
+    <RelativeLayout
         android:id="@+id/num4"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_toRightOf="@+id/num2"
-        android:layout_alignBottom="@+id/num2"
-        android:layout_marginBottom="50dp"
-        android:layout_marginLeft="5dp"
-        android:src="@drawable/ic_player"
-        android:onClick="Num4"/>
-
-    <ImageView
-        android:id="@+id/num5"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_toLeftOf="@+id/num3"
-        android:layout_alignBottom="@+id/num3"
-        android:layout_marginBottom="50dp"
-        android:layout_marginRight="5dp"
-        android:src="@drawable/ic_player"
-        android:onClick="Num5"/>
-
-    <ImageView
-        android:id="@+id/num6"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_alignBottom="@+id/num4"
-        android:layout_above="@+id/num2"
-        android:layout_marginBottom="80dp"
-        android:layout_marginLeft="50dp"
-        android:src="@drawable/ic_player"
-        android:onClick="Num6"/>
-
-    <ImageView
-        android:id="@+id/num7"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignBottom="@+id/num5"
-        android:layout_above="@+id/num3"
-        android:layout_marginBottom="80dp"
-        android:layout_marginRight="50dp"
-        android:src="@drawable/ic_player"
-        android:onClick="Num7"/>
-
-    <ImageView
-        android:id="@+id/num8"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="110dp"
-        android:layout_above="@+id/num6"
-        android:src="@drawable/ic_player"
-        android:onClick="Num8"/>
-
-    <ImageView
-        android:id="@+id/num9"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="110dp"
-        android:layout_above="@+id/num6"
-        android:src="@drawable/ic_player"
-        android:onClick="Num9"/>
-
-    <ImageView
-        android:id="@+id/num10"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_alignBottom="@+id/num9"
-        android:layout_alignRight="@+id/num9"
-        android:layout_marginLeft="20dp"
-        android:layout_marginBottom="100dp"
-        android:src="@drawable/ic_player"
-        android:onClick="Num10"/>
-
-    <ImageView
-        android:id="@+id/num11"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_alignBottom="@+id/num8"
-        android:layout_alignRight="@+id/num8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/line"
+        android:layout_alignBottom="@+id/num1"
+        android:layout_marginBottom="130dp"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="100dp"
-        android:src="@drawable/ic_player"
-        android:onClick="Num11"/>
+        android:onClick="Num4">
+
+        <ImageView
+            android:id="@+id/img4"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_player"/>
+        <TextView
+            android:id="@+id/n4"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:layout_below="@+id/img4"
+            android:textDirection="rtl"
+            android:text="لبسشی یشسی "
+            android:textAlignment="center"
+            android:ellipsize="middle"
+            android:textColor="#960002"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/num5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/line"
+        android:layout_alignBottom="@+id/num1"
+        android:layout_marginBottom="130dp"
+        android:layout_marginLeft="20dp"
+        android:onClick="Num5">
+
+        <ImageView
+            android:id="@+id/img5"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_player"/>
+        <TextView
+            android:id="@+id/n5"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:layout_below="@+id/img5"
+            android:textDirection="rtl"
+            android:text="لبسشی یشسی "
+            android:textAlignment="center"
+            android:ellipsize="middle"
+            android:textColor="#960002"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/num6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/num4"
+        android:layout_alignBottom="@+id/num4"
+        android:layout_marginBottom="80dp"
+        android:layout_marginRight="10dp"
+        android:onClick="Num6">
+
+        <ImageView
+            android:id="@+id/img6"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_player"/>
+        <TextView
+            android:id="@+id/n6"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:layout_below="@+id/img6"
+            android:textDirection="rtl"
+            android:text="لبسشی یشسی "
+            android:textAlignment="center"
+            android:ellipsize="middle"
+            android:textColor="#960002"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/num7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/line"
+        android:layout_alignBottom="@+id/num5"
+        android:layout_marginBottom="80dp"
+        android:layout_marginLeft="70dp"
+        android:onClick="Num7">
+
+        <ImageView
+            android:id="@+id/img7"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_player"/>
+        <TextView
+            android:id="@+id/n7"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:layout_below="@+id/img7"
+            android:textDirection="rtl"
+            android:text="لبسشی یشسی "
+            android:textAlignment="center"
+            android:ellipsize="middle"
+            android:textColor="#960002"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/num8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/line"
+        android:layout_alignBottom="@+id/num6"
+        android:layout_marginBottom="50dp"
+        android:layout_marginRight="25dp"
+        android:onClick="Num8">
+
+        <ImageView
+            android:id="@+id/img8"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_player"/>
+        <TextView
+            android:id="@+id/n8"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:layout_below="@+id/img8"
+            android:textDirection="rtl"
+            android:text="لبسشی یشسی "
+            android:textAlignment="center"
+            android:ellipsize="middle"
+            android:textColor="#960002"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/num9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/line"
+        android:layout_alignBottom="@+id/num7"
+        android:layout_marginBottom="50dp"
+        android:layout_marginLeft="25dp"
+        android:onClick="Num9">
+
+        <ImageView
+            android:id="@+id/img9"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_player"/>
+        <TextView
+            android:id="@+id/n9"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:layout_below="@+id/img9"
+            android:textDirection="rtl"
+            android:text="لبسشی یشسی "
+            android:textAlignment="center"
+            android:ellipsize="middle"
+            android:textColor="#960002"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/num10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/line"
+        android:layout_alignBottom="@+id/num8"
+        android:layout_marginBottom="110dp"
+        android:layout_marginRight="35dp"
+        android:onClick="Num10">
+
+        <ImageView
+            android:id="@+id/img10"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_player"/>
+        <TextView
+            android:id="@+id/n10"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:layout_below="@+id/img10"
+            android:textDirection="rtl"
+            android:text="لبسشی یشسی "
+            android:textAlignment="center"
+            android:ellipsize="middle"
+            android:textColor="#960002"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/num11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/line"
+        android:layout_alignBottom="@+id/num9"
+        android:layout_marginBottom="110dp"
+        android:layout_marginLeft="35dp"
+        android:onClick="Num11">
+
+        <ImageView
+            android:id="@+id/img11"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_player"/>
+        <TextView
+            android:id="@+id/n11"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:layout_below="@+id/img11"
+            android:textDirection="rtl"
+            android:text="لبسشی یشسی "
+            android:textAlignment="center"
+            android:ellipsize="middle"
+            android:textColor="#960002"/>
+    </RelativeLayout>
+
 
 </RelativeLayout>
