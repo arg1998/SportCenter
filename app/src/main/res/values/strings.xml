@@ -32,4 +32,7 @@
     <string name="Formation_433">ترکیب چهار-سه-سه</string>
     <string name="Formation_442">ترکیب چهار-چهار-دو</string>
     <string name="Formation_532">ترکیب پنج-سه-دو</string>
+    <string name="_40">40%</string>
+    <string name="_20">20%</string>
+    <string name="mark">امتیاز</string>
 </resources>

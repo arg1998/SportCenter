@@ -9,10 +9,6 @@
     android:layoutDirection="rtl"
     tools:context="ir.mafiaaa.sportcenter.Main">
 
-    <include
-        android:id="@+id/customToolBar"
-        layout="@layout/toolbar" />
-
     <FrameLayout
         android:id="@+id/framLayout_btmBar"
         android:layout_width="match_parent"
@@ -37,7 +33,6 @@
     </FrameLayout>
 
     <RelativeLayout
-        android:layout_below="@id/customToolBar"
         android:id="@+id/main_container"
         android:layout_above="@id/framLayout_btmBar"
         android:layout_width="match_parent"

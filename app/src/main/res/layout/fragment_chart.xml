@@ -1,9 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/line"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:id="@+id/line"
+
+        />
+
+    <TextView
+        android:layout_width="80dp"
+        android:layout_height="100dp"
+        android:id="@+id/draw_chart"
+        android:background="@drawable/chart"
+        android:layout_above="@+id/line"
+        android:layout_centerHorizontal="true"
+        android:text="40%"
+        style="@style/chartText"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:id="@+id/win_chart"
+        android:background="@drawable/chart"
+        android:layout_above="@+id/line"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@id/draw_chart"
+        android:text="20%"
+        style="@style/chartText"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="80dp"
+        android:layout_height="100dp"
+        android:id="@+id/defeat_chart"
+        android:background="@drawable/chart"
+        android:layout_above="@+id/line"
+        android:layout_marginRight="20dp"
+        android:layout_toLeftOf="@+id/draw_chart"
+        android:text="40%"
+        style="@style/chartText"
+        android:gravity="center"
+        />
+    <TextView
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/defeat_chart"
+        android:text="5000"
+        android:gravity="center"
+        android:layout_alignStart="@+id/defeat_chart" />
+
+    <TextView
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/draw_chart"
+        android:text="5000"
+        android:gravity="center"
+        android:layout_alignStart="@+id/draw_chart" />
+
+    <TextView
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/win_chart"
+        android:text="2500"
+        android:gravity="center"
+        android:layout_alignStart="@+id/win_chart" />
 
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/win_Text"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:text="برد"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:layout_gravity ="center_horizontal"
+        android:layout_below="@+id/line"
+        android:layout_alignStart="@+id/win_chart" />
+
+    <TextView
+        android:id="@+id/draw_Text"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:text="مساوی"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:layout_gravity ="center_horizontal"
+        android:layout_below="@+id/line"
+        android:layout_alignStart="@+id/draw_chart" />
+
+    <TextView
+        android:id="@+id/defeat_Text"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:text="باخت"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:layout_gravity ="center_horizontal"
+        android:layout_below="@+id/line"
+        android:layout_alignStart="@+id/defeat_chart" />
+
+    <TextView
+        android:id="@+id/counter_vote"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_below="@+id/win_Text"
+        android:paddingRight="15dp"
+        android:text=" تعداد کل آرا :   12500  "
+        android:textSize="20sp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/counter_vote"
+        android:paddingRight="15dp"
+        android:text= "ضریب پیشنهاد : 4"
+        android:textSize="20sp"/>
+
+
+
+</RelativeLayout>

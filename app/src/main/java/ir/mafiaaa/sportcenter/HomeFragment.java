@@ -1,9 +1,16 @@
 package ir.mafiaaa.sportcenter;
 
 import android.os.Bundle;
+import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.AppCompatEditText;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +18,6 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
-import static ir.mafiaaa.sportcenter.R.id.container;
 
 /**
  * Created by Shima on 9/15/2017.
@@ -19,8 +25,17 @@ import static ir.mafiaaa.sportcenter.R.id.container;
 
 public class HomeFragment extends Fragment {
 
+    private AppCompatActivity context;
+    DrawerLayout drawerLayout;
+
+    public HomeFragment (AppCompatActivity context , DrawerLayout drawerLayout){
+        this.context = context;
+        this.drawerLayout = drawerLayout;
+    }
 
 
+
+    private Toolbar toolbar;
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private List<ListItem> listItems;
@@ -32,7 +47,14 @@ public class HomeFragment extends Fragment {
         final View rootView = inflater.inflate(R.layout.fragment_home, container, false);
 
         recyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerView);
+        toolbar = (Toolbar) rootView.findViewById(R.id.Tool_Bar2);
+        context.setSupportActionBar(toolbar);
+
+        final CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) rootView.findViewById(R.id.Collapse_ToolBar);
         recyclerView.setHasFixedSize(true);
+
+
+
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
@@ -68,6 +90,10 @@ public class HomeFragment extends Fragment {
 
         adapter = new RecyclerAdapter(listItems,getContext());
         recyclerView.setAdapter(adapter);
+
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(context ,drawerLayout , toolbar ,R.string.open_drawer , R.string.close_drawer);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
 
 
         return rootView;
