@@ -35,4 +35,9 @@
     <string name="_40">40%</string>
     <string name="_20">20%</string>
     <string name="mark">امتیاز</string>
+    <string name="setting">تنظیمات</string>
+    <string name="shop">خرید</string>
+    <string name="support">حمایت از تیم</string>
+    <string name="view">معرفی</string>
+    <string name="developers">سازندگان</string>
 </resources>

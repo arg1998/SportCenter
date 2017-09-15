@@ -91,6 +91,7 @@ public class HomeFragment extends Fragment {
         adapter = new RecyclerAdapter(listItems,getContext());
         recyclerView.setAdapter(adapter);
 
+
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(context ,drawerLayout , toolbar ,R.string.open_drawer , R.string.close_drawer);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();

@@ -35,7 +35,7 @@ public class SplashScreen extends Activity {
                     int waited = 0;
                     // Splash screen pause time
                     while (waited < 3500) {
-                        sleep(200);
+                        sleep(100);
                         waited += 100;
                     }
 
