@@ -22,8 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="40dp"
-        android:onClick="Num1">
+        android:layout_marginBottom="40dp">
 
         <ImageView
             android:id="@+id/img1"
@@ -51,8 +50,7 @@
         android:layout_alignParentStart="true"
         android:layout_marginBottom="110dp"
         android:layout_marginStart="60dp"
-        android:src="@drawable/ic_player"
-        android:onClick="Num2">
+        android:src="@drawable/ic_player">
 
         <ImageView
             android:id="@+id/img2"
@@ -78,8 +76,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_marginBottom="110dp"
-        android:layout_marginEnd="60dp"
-        android:onClick="Num3">
+        android:layout_marginEnd="60dp">
 
         <ImageView
             android:id="@+id/img3"
@@ -105,8 +102,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_alignBottom="@+id/num1"
-        android:layout_marginBottom="100dp"
-        android:onClick="Num4">
+        android:layout_marginBottom="100dp">
 
         <ImageView
             android:id="@+id/img4"
@@ -133,8 +129,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/num4"
         android:layout_toLeftOf="@+id/num4"
-        android:layout_marginBottom="90dp"
-        android:onClick="Num5">
+        android:layout_marginBottom="90dp">
         <ImageView
             android:id="@+id/img5"
             android:layout_width="50dp"
@@ -158,8 +153,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/num4"
         android:layout_toRightOf="@+id/num4"
-        android:layout_marginBottom="90dp"
-        android:onClick="Num6">
+        android:layout_marginBottom="90dp">
         <ImageView
             android:id="@+id/img6"
             android:layout_width="50dp"
@@ -183,8 +177,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/num5"
         android:layout_toLeftOf="@+id/num5"
-        android:layout_marginBottom="70dp"
-        android:onClick="Num7">
+        android:layout_marginBottom="70dp">
         <ImageView
             android:id="@+id/img7"
             android:layout_width="50dp"
@@ -210,7 +203,7 @@
         android:layout_alignBottom="@+id/num5"
         android:layout_marginBottom="70dp"
         android:src="@drawable/ic_player"
-        android:onClick="Num8">
+        >
         <ImageView
             android:id="@+id/img8"
             android:layout_width="50dp"
@@ -235,8 +228,7 @@
         android:layout_alignBottom="@+id/num6"
         android:layout_toRightOf="@+id/num6"
         android:layout_marginBottom="70dp"
-        android:src="@drawable/ic_player"
-        android:onClick="Num9">
+        android:src="@drawable/ic_player">
 
         <ImageView
             android:id="@+id/img9"
@@ -262,8 +254,7 @@
         android:layout_alignBottom="@+id/num8"
         android:layout_toLeftOf="@+id/num8"
         android:layout_marginBottom="100dp"
-        android:src="@drawable/ic_player"
-        android:onClick="Num10">
+        android:src="@drawable/ic_player">
         <ImageView
             android:id="@+id/img10"
             android:layout_width="50dp"
@@ -288,8 +279,7 @@
         android:layout_alignBottom="@+id/num8"
         android:layout_toRightOf="@+id/num8"
         android:layout_marginBottom="100dp"
-        android:src="@drawable/ic_player"
-        android:onClick="Num11">
+        android:src="@drawable/ic_player">
         <ImageView
             android:id="@+id/img11"
             android:layout_width="50dp"

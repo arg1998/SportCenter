@@ -17,6 +17,7 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import ir.mafiaaa.sportcenter.Formation;
@@ -24,6 +25,7 @@ import ir.mafiaaa.sportcenter.ListItem;
 import ir.mafiaaa.sportcenter.R;
 import ir.mafiaaa.sportcenter.RecyclerFormationAdapter;
 
+import static java.util.Arrays.asList;
 
 
 public class Custom_dialog extends Dialog {
@@ -83,17 +85,12 @@ public class Custom_dialog extends Dialog {
 
         //AMP !!!
 
-        strings = new ArrayList();
-        strings.add("محمد انصاری");
-        strings.add("حسین ماهینی");
-        strings.add("سیدجلال حسینی");
-        strings.add("سیدجلال حسینی");
-        strings.add("سیدجلال حسینی");
-        strings.add("سیدجلال حسینی");
-        strings.add("سیدجلال حسینی");
-        strings.add("سیدجلال حسینی");
-        strings.add("سیدجلال حسینی");
-        strings.add("سیدجلال حسینی");
+        ArrayList strings = new ArrayList(asList("بوژیدار رادوشویچ","علیرضا بیرانوند","ابوالفضل درویشوند",
+                "شجاع خلیل‌زاده","سیدجلال حسینی","حسین ماهینی","محمد انصاری","محسن ربیع‌خواه","شاهین عباسیان",
+                "شایان مصلح","احسان حسینی","وحید امیری","فرشاد احمدزاده","کمال کامیابی‌نیا","احمد نوراللهی",
+                "احسان علوان‌زاده","سیامک نعمتی","صادق محرمی","آدام همتی","سعید حسین‌پور","بشار رسن","علی علیپور",
+                "مهدی طارمی","محسن مسلمان","حمیدرضا طاهرخانی","محمد اسدی","آیدین رضایی","گادوین منشا"));
+
 
         adapter2 = new ArrayAdapter<ArrayList>(getContext(),android.R.layout.simple_list_item_1, strings);
 
