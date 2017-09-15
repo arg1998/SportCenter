@@ -3,35 +3,32 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:title="Inbox"
+            android:title="@string/setting"
             android:id="@+id/InboxId"
             android:icon="@drawable/gmail"/>
 
         <item
-            android:title="star"
+            android:title="@string/shop"
             android:id="@+id/starId"
             android:icon="@drawable/star"/>
 
         <item
-            android:title="draft"
+            android:title="@string/support"
             android:id="@+id/draftId"
             android:icon="@drawable/draft"/>
 
     </group>
 
-    <item android:title="Subheader">
+    <item android:title="@string/view">
 
         <menu>
 
             <item
-                android:title="sentMail"
+                android:title="@string/developers"
                 android:icon="@drawable/sent"
                 android:id="@+id/sentId"/>
 
-            <item
-                android:id="@+id/update"
-                android:title="Updates"
-                android:icon="@drawable/updates"/>
+
         </menu>
 
     </item>

@@ -1,6 +1,7 @@
 package ir.mafiaaa.sportcenter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -35,9 +36,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
 
         final ListItem listItem = listItems.get(position);
+
 
         holder.textViewHead.setText(listItem.getHead());
         holder.textViewDesc.setText(listItem.getDesc());
@@ -45,12 +47,15 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         holder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context,"You clicked" +listItem.getHead(),Toast.LENGTH_LONG).show();
+
+                if(listItem.getHead().startsWith("بازی پیش"))
+                {
+
+                    Intent intent = new Intent(context,FormationActivity.class);
+                    context.startActivity(intent);
+                }
             }
         });
-
-
-
     }
 
     @Override
