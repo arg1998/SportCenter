@@ -1,25 +1,34 @@
 package FormationFragments;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 
+import ir.mafiaaa.sportcenter.Formation;
 import ir.mafiaaa.sportcenter.R;
 
 
-public class Formation352 extends Fragment {
+public class Formation352 extends Fragment implements FormationSelect.OnFragmentInteractionListener {
+
+    FormationSelect selectFragment;
+
+    AppCompatActivity contxet;
 
     public void log(String info){
         Log.i("AMP : ", info);
     }
 
-    public Formation352() {
+    public Formation352(AppCompatActivity context) {
         // Required empty public constructor
+        this.contxet = context;
     }
 
 
@@ -29,6 +38,9 @@ public class Formation352 extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         log("6");
+
+        contxet.getSupportFragmentManager().beginTransaction().add(R.id.rightCont, selectFragment).commit();
+
         return inflater.inflate(R.layout.fragment_formation352, container, false);
 
     }
@@ -49,25 +61,57 @@ public class Formation352 extends Fragment {
         ImageView num10 = (ImageView) view.findViewById(R.id.img10);
         ImageView num11 = (ImageView) view.findViewById(R.id.img11);
 
+        selectFragment = new FormationSelect();
+
+
+
         View.OnClickListener clickListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 switch (v.getId())
                 {
-                    case R.id.num1:
+                    case R.id.img1:
+                        log("num1");
+                        show_Right_Frag();
                         break;
-                    case R.id.num2:
-                    case R.id.num3:
-                    case R.id.num4:
+
+                    case R.id.img2:
+                        show_Right_Frag();
                         break;
-                    case R.id.num5:
-                    case R.id.num6:
-                    case R.id.num7:
-                    case R.id.num8:
-                    case R.id.num9:
+
+                    case R.id.img3:
+                        show_Right_Frag();
                         break;
-                    case R.id.num10:
-                    case R.id.num11:
+
+                    case R.id.img4:
+                        show_left_Frag();
+                        break;
+                    case R.id.img5:
+                        show_Right_Frag();
+                        break;
+
+                    case R.id.img6:
+                        show_left_Frag();
+                        break;
+
+                    case R.id.img7:
+                        show_Right_Frag();
+                        break;
+
+                    case R.id.img8:
+                        show_Right_Frag();
+                        break;
+
+                    case R.id.img9:
+                        show_left_Frag();
+                        break;
+
+                    case R.id.img10:
+                        show_Right_Frag();
+                        break;
+
+                    case R.id.img11:
+                        show_left_Frag();
                         break;
 
                 }
@@ -89,20 +133,31 @@ public class Formation352 extends Fragment {
     }
 
 
-    public void selectDarvazeBan(){
+    public void show_Right_Frag(){
+        contxet.getSupportFragmentManager().beginTransaction().add(R.id.rightCont, selectFragment).commit();
+    }
+
+    public void show_left_Frag(){
+        contxet.getSupportFragmentManager().beginTransaction().add(R.id.leftCont, selectFragment).commit();
+    }
+
+    public void num1(){
+    }
+
+    public void num2(){
 
     }
 
-    public void selectModafe(){
+    public void num3(){
 
     }
 
-    public void selectHafbak(){
+    public void num4(){
 
     }
 
-    public void selectMohajem(){
+    @Override
+    public void onFragmentInteraction(Uri uri) {
 
     }
-
 }

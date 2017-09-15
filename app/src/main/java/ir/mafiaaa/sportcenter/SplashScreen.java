@@ -5,12 +5,8 @@ import android.content.Intent;
 import android.graphics.PixelFormat;
 import android.os.Bundle;
 import android.view.Window;
-import android.view.WindowManager;
 
 import com.backtory.java.internal.BacktoryUser;
-
-import ir.mafiaaa.sportcenter.R;
-import ir.mafiaaa.sportcenter.WelcomeActivity;
 
 public class SplashScreen extends Activity {
 
@@ -48,14 +44,14 @@ public class SplashScreen extends Activity {
                     if (me == null)
                     {
                         Intent intent = new Intent(SplashScreen.this,
-                                WelcomeActivity.class);
+                                Main.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                         startActivity(intent);
                     }
                     else
                     {
                         Intent intent = new Intent(SplashScreen.this,
-                                WelcomeActivity.class);
+                                Main.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                         startActivity(intent);
                     }
@@ -65,7 +61,6 @@ public class SplashScreen extends Activity {
                 } finally {
                     SplashScreen.this.finish();
                 }
-
             }
         };
         splashTread.start();
