@@ -1,18 +1,29 @@
 package ir.mafiaaa.sportcenter;
 
+import android.graphics.Bitmap;
+import android.support.annotation.NonNull;
+
 import java.util.ArrayList;
 
 /**
  * Created by ARG on 9/14/2017 - 10:33 PM
  */
 
-public class Team
+public class Team implements Comparable<Team>
 {
     private String name;
     private Coach coach;
     private int ranking;
     private Leagues league;
-    ArrayList<Player> players;
+    private Bitmap logo;
+    private ArrayList<Player> players;
+    public static Team myTeam;
+
+    public Team()
+    {
+        coach = new Coach();
+        players = new ArrayList<>();
+    }
 
     public String getName() {
         return name;
@@ -24,6 +35,22 @@ public class Team
 
     public Coach getCoach() {
         return coach;
+    }
+
+    public Bitmap getLogo() {
+        return logo;
+    }
+
+    public static Team getMyTeam() {
+        return myTeam;
+    }
+
+    public static void setMyTeam(Team myTeam) {
+        Team.myTeam = myTeam;
+    }
+
+    public void setLogo(Bitmap logo) {
+        this.logo = logo;
     }
 
     public void setCoach(Coach coach) {
@@ -52,5 +79,15 @@ public class Team
 
     public void setPlayers(ArrayList<Player> players) {
         this.players = players;
+    }
+
+    @Override
+    public int compareTo(@NonNull Team team) {
+        return this.ranking - team.getRanking();
+    }
+
+    @Override
+    public String toString() {
+        return ranking + " - " + name;
     }
 }
