@@ -92,9 +92,26 @@
         android:layout_height="wrap_content"
         android:id="@+id/CH_laws"
         android:text="@string/laws"
-        android:layout_below="@+id/rePass_TextInputLayout"
+        android:layout_below="@+id/favorite_team"
         android:layout_margin="@dimen/distant_EditText"
         />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/favorite_team"
+        android:layout_below="@+id/rePass_TextInputLayout"
+        android:layout_alignStart="@+id/rePass_TextInputLayout"
+        android:layout_toStartOf="@+id/textView"
+        android:entries="@array/favorite_team"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/favorite_team"
+        android:layout_below="@+id/rePass_TextInputLayout"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="10dp"
+        android:id="@+id/textView" />
 
     <Button
         android:layout_width="match_parent"

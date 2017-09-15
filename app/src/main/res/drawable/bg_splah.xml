@@ -3,7 +3,7 @@
 
     <gradient
         android:startColor="#000000"
-        android:endColor="@color/colorPrimaryDark"/>
+        android:endColor="@color/colorBlue"/>
 
 
 
