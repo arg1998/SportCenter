@@ -5,17 +5,23 @@
         <item
             android:title="@string/setting"
             android:id="@+id/InboxId"
-            android:icon="@drawable/gmail"/>
+            android:icon="@drawable/ic_setting"/>
 
         <item
             android:title="@string/shop"
             android:id="@+id/starId"
-            android:icon="@drawable/star"/>
+            android:icon="@drawable/ic_shop"/>
 
         <item
             android:title="@string/support"
             android:id="@+id/draftId"
-            android:icon="@drawable/draft"/>
+            android:icon="@drawable/ic_support"/>
+
+        <item
+            android:id="@+id/LogOut"
+            android:icon="@drawable/ic_exit"
+            android:title="خروج از حساب کاربری"
+           />
 
     </group>
 
@@ -25,8 +31,9 @@
 
             <item
                 android:title="@string/developers"
-                android:icon="@drawable/sent"
-                android:id="@+id/sentId"/>
+                android:icon="@drawable/ic_developer"
+                android:id="@+id/developer"
+                />
 
 
         </menu>

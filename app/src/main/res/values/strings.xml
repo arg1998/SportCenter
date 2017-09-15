@@ -22,8 +22,9 @@
     <string name="heading">heading</string>
     <string name="favorite_team">تیم مورد علاقه</string>
     <string-array name="favorite_team">
+        <item>انتخاب کنید ...</item>
         <item>پرسپولیس</item>
-        <item>استقلال</item>
+        <item>استقلال تهران</item>
     </string-array>
 
 
@@ -40,4 +41,5 @@
     <string name="support">حمایت از تیم</string>
     <string name="view">معرفی</string>
     <string name="developers">سازندگان</string>
+    <string name="Log_out">خروج</string>
 </resources>

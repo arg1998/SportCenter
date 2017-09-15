@@ -14,10 +14,11 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.backtory.java.internal.BacktoryUser;
 
-public class Main extends AppCompatActivity {
+public class Main extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
 
 
@@ -25,6 +26,7 @@ public class Main extends AppCompatActivity {
     //nav Drawer
     DrawerLayout drawerLayout;
     NavigationView navigationView;
+
 
     //fragments
     HomeFragment homeFragment;
@@ -44,6 +46,8 @@ public class Main extends AppCompatActivity {
         setContentView(R.layout.navigation_drawer);
         Log.d("AmirReza" , "Welcome Activity part");
 
+        MyFavoriteTeamHandler favoriteTeamHandler = new MyFavoriteTeamHandler(this);
+        favoriteTeamHandler.getMyFavoriteTeam();
         BacktoryUser me = BacktoryUser.getCurrentUser();
 
         if (me == null)
@@ -61,6 +65,11 @@ public class Main extends AppCompatActivity {
             bottomBar = (BottomNavigationView) findViewById(R.id.bottomBar);
             drawerLayout = (DrawerLayout) findViewById(R.id.navDrawerLayout);
             navigationView = (NavigationView) findViewById(R.id.navView);
+
+
+            navigationView.setNavigationItemSelectedListener(this);
+
+
 
 
             //init fragment
@@ -127,6 +136,25 @@ public class Main extends AppCompatActivity {
         else {
             super.onBackPressed();
         }
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        int id = item.getItemId();
+        if(id == R.id.LogOut){
+            try {
+                BacktoryUser.logoutInBackground();
+            }
+            catch (Exception e){e.printStackTrace();}
+
+            Intent intent = new Intent(this , Register.class);
+            startActivity(intent);
+            this.finish();
+        }
+        drawerLayout.closeDrawer(GravityCompat.START);
+        return true;
+
     }
 }
 

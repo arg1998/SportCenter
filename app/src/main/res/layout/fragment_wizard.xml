@@ -8,11 +8,21 @@
     android:fitsSystemWindows="true"
     tools:context=".Main">
 
+
     <RelativeLayout
         android:id="@+id/wizardContainer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:background="@drawable/clicktow"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="کلیک کنید"
+        android:textSize="36sp"
+
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
     <RelativeLayout
         android:id="@+id/layoutButton"
@@ -22,19 +32,24 @@
         android:background="@color/colorPrimary"
         android:visibility="gone">
 
+
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:gravity="center">
 
+
             <Button
+                android:text=" برد تیم  "
                 android:layout_width="160dp"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/colorPrimaryDark"
                 android:id="@+id/ButtonWin"/>
 
             <Button
+                android:text=" تساوی تیم "
                 android:layout_width="160dp"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/colorPrimaryDark"
@@ -42,6 +57,7 @@
 
 
             <Button
+                android:text="باخت تیم"
                 android:layout_width="160dp"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/colorPrimaryDark"
@@ -60,6 +76,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginBottom="16dp"
         android:layout_marginRight="16dp"
+
         />
 
 </RelativeLayout>
