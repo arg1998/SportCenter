@@ -37,17 +37,17 @@ public class Formation352 extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        ImageView num1 = (ImageView) view.findViewById(R.id.num1);
-        ImageView num2 = (ImageView) view.findViewById(R.id.num2);
-        ImageView num3 = (ImageView) view.findViewById(R.id.num3);
-        ImageView num4 = (ImageView) view.findViewById(R.id.num4);
-        ImageView num5 = (ImageView) view.findViewById(R.id.num5);
-        ImageView num6 = (ImageView) view.findViewById(R.id.num6);
-        ImageView num7 = (ImageView) view.findViewById(R.id.num7);
-        ImageView num8 = (ImageView) view.findViewById(R.id.num8);
-        ImageView num9 = (ImageView) view.findViewById(R.id.num9);
-        ImageView num10 = (ImageView) view.findViewById(R.id.num10);
-        ImageView num11 = (ImageView) view.findViewById(R.id.num11);
+        ImageView num1 = (ImageView) view.findViewById(R.id.img1);
+        ImageView num2 = (ImageView) view.findViewById(R.id.img2);
+        ImageView num3 = (ImageView) view.findViewById(R.id.img3);
+        ImageView num4 = (ImageView) view.findViewById(R.id.img4);
+        ImageView num5 = (ImageView) view.findViewById(R.id.img5);
+        ImageView num6 = (ImageView) view.findViewById(R.id.img6);
+        ImageView num7 = (ImageView) view.findViewById(R.id.img7);
+        ImageView num8 = (ImageView) view.findViewById(R.id.img8);
+        ImageView num9 = (ImageView) view.findViewById(R.id.img9);
+        ImageView num10 = (ImageView) view.findViewById(R.id.img10);
+        ImageView num11 = (ImageView) view.findViewById(R.id.img11);
 
         View.OnClickListener clickListener = new View.OnClickListener() {
             @Override
