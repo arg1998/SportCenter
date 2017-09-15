@@ -39,7 +39,7 @@ public class Formation352 extends Fragment implements FormationSelect.OnFragment
         // Inflate the layout for this fragment
         log("6");
 
-        contxet.getSupportFragmentManager().beginTransaction().add(R.id.rightCont, selectFragment).commit();
+        //contxet.getSupportFragmentManager().beginTransaction().add(R.id.rightCont, selectFragment).commit();
 
         return inflater.inflate(R.layout.fragment_formation352, container, false);
 
