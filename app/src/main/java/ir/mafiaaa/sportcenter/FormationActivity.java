@@ -17,6 +17,11 @@ import FormationFragments.Formation532;
 
 public class FormationActivity extends AppCompatActivity {
 
+    Formation352 formation352;
+    Formation433 formation433;
+    Formation442 formation442;
+    Formation532 formation532;
+
     public void log(String info){
         Log.i("AMP : ", info);
     }
@@ -25,6 +30,15 @@ public class FormationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formation);
+
+        formation352 = new Formation352(this);
+
+        formation433 = new Formation433();
+
+        formation442 = new Formation442();
+
+        formation532 = new Formation532();
+
         log("0");
 
         final Spinner spinner = (Spinner) findViewById(R.id.spinner);
@@ -46,7 +60,6 @@ public class FormationActivity extends AppCompatActivity {
 
         log("3");
 
-        Formation352 formation352 = new Formation352();
         getSupportFragmentManager().beginTransaction().add( R.id.fragmentContainer, formation352).commit();
 
         log("4");
@@ -60,25 +73,25 @@ public class FormationActivity extends AppCompatActivity {
                 {
                     case "ترکیب سه-پنج-دو":
 
-                        Formation352 formation352 = new Formation352();
+
                         getSupportFragmentManager().beginTransaction().replace( R.id.fragmentContainer, formation352).commit();
 
                         break;
                     case "ترکیب چهار-سه-سه":
 
-                        Formation433 formation433 = new Formation433();
+
                         getSupportFragmentManager().beginTransaction().replace( R.id.fragmentContainer, formation433).commit();
 
                         break;
                     case "ترکیب چهار-چهار-دو":
 
-                        Formation442 formation442 = new Formation442();
+
                         getSupportFragmentManager().beginTransaction().replace( R.id.fragmentContainer, formation442).commit();
 
                         break;
                     case "ترکیب پنج-سه-دو":
 
-                        Formation532 formation532 = new Formation532();
+
                         getSupportFragmentManager().beginTransaction().replace( R.id.fragmentContainer, formation532).commit();
 
                         break;
