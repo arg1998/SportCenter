@@ -4,5 +4,5 @@
     android:layout_height="160dp"
     android:padding="16dp"
     android:gravity="bottom"
-    android:background="#e4d231">
+    android:background="@drawable/header">
 </LinearLayout>

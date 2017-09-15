@@ -28,7 +28,7 @@
         <android.support.design.widget.BottomNavigationView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#3498db"
+            android:background="#263238"
             design:itemIconTint = "#ffff"
             design:itemTextColor = "#fff"
             android:id="@+id/bottomBar"
