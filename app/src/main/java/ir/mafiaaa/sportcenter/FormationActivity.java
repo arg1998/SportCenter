@@ -4,12 +4,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
-import android.widget.SpinnerAdapter;
 
 import java.util.ArrayList;
-import java.util.List;
+
+import FormationFragments.Formation352;
+import FormationFragments.Formation433;
+import FormationFragments.Formation442;
+import FormationFragments.Formation532;
 
 public class FormationActivity extends AppCompatActivity {
 
@@ -47,15 +51,48 @@ public class FormationActivity extends AppCompatActivity {
 
         log("4");
 
-        /*spinner.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                switch (spinner.getAdapter().toString())
-                Formation352 formation352 = new Formation352();
-                getSupportFragmentManager().beginTransaction().add( R.id.fragmentContainer, formation352).commit();
-            }
-        });*/
 
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                switch (spinner.getSelectedItem().toString())
+                {
+                    case "Formation : 3-5-2":
+
+                        Formation352 formation352 = new Formation352();
+                        getSupportFragmentManager().beginTransaction().replace( R.id.fragmentContainer, formation352).commit();
+
+                        break;
+                    case "Formation : 4-3-3":
+
+                        Formation433 formation433 = new Formation433();
+                        getSupportFragmentManager().beginTransaction().replace( R.id.fragmentContainer, formation433).commit();
+
+                        break;
+                    case "Formation : 4-4-2":
+
+                        Formation442 formation442 = new Formation442();
+                        getSupportFragmentManager().beginTransaction().replace( R.id.fragmentContainer, formation442).commit();
+
+                        break;
+                    case "Formation : 5-3-2":
+
+                        Formation532 formation532 = new Formation532();
+                        getSupportFragmentManager().beginTransaction().replace( R.id.fragmentContainer, formation532).commit();
+
+                        break;
+                }
+
+                String text = spinner.getSelectedItem().toString();
+                log(text);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                log("nothing");
+            }
+        });
 
     }
 }
