@@ -1,6 +1,5 @@
 package ir.mafiaaa.sportcenter;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
