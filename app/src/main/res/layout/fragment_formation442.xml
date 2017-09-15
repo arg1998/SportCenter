@@ -13,6 +13,13 @@
         android:scaleType="fitXY"
         android:src="@drawable/field" />
 
+    <TextView
+        android:id="@+id/line"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/line2"/>
+
     <ImageView
         android:id="@+id/num1"
         android:layout_width="50dp"
@@ -27,10 +34,10 @@
         android:id="@+id/num2"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="110dp"
-        android:layout_marginStart="60dp"
+        android:layout_toLeftOf="@+id/line"
+        android:layout_alignBottom="@+id/num1"
+        android:layout_marginBottom="70dp"
+        android:layout_marginRight="60dp"
         android:src="@drawable/ic_player"
         android:onClick="Num2"/>
 
@@ -38,10 +45,10 @@
         android:id="@+id/num3"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="110dp"
-        android:layout_marginEnd="60dp"
+        android:layout_toRightOf="@+id/line"
+        android:layout_alignBottom="@+id/num1"
+        android:layout_marginBottom="70dp"
+        android:layout_marginLeft="60dp"
         android:src="@drawable/ic_player"
         android:onClick="Num3"/>
 
@@ -49,10 +56,10 @@
         android:id="@+id/num4"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_toRightOf="@+id/num2"
-        android:layout_alignBottom="@+id/num2"
-        android:layout_marginBottom="50dp"
-        android:layout_marginLeft="5dp"
+        android:layout_toLeftOf="@+id/line"
+        android:layout_alignBottom="@+id/num1"
+        android:layout_marginBottom="130dp"
+        android:layout_marginRight="20dp"
         android:src="@drawable/ic_player"
         android:onClick="Num4"/>
 
@@ -60,10 +67,10 @@
         android:id="@+id/num5"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_toLeftOf="@+id/num3"
-        android:layout_alignBottom="@+id/num3"
-        android:layout_marginBottom="50dp"
-        android:layout_marginRight="5dp"
+        android:layout_toRightOf="@+id/line"
+        android:layout_alignBottom="@+id/num1"
+        android:layout_marginBottom="130dp"
+        android:layout_marginLeft="20dp"
         android:src="@drawable/ic_player"
         android:onClick="Num5"/>
 
@@ -71,10 +78,10 @@
         android:id="@+id/num6"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:layout_toLeftOf="@+id/num4"
         android:layout_alignBottom="@+id/num4"
-        android:layout_above="@+id/num2"
         android:layout_marginBottom="80dp"
-        android:layout_marginLeft="50dp"
+        android:layout_marginRight="10dp"
         android:src="@drawable/ic_player"
         android:onClick="Num6"/>
 
@@ -82,11 +89,10 @@
         android:id="@+id/num7"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/line"
         android:layout_alignBottom="@+id/num5"
-        android:layout_above="@+id/num3"
         android:layout_marginBottom="80dp"
-        android:layout_marginRight="50dp"
+        android:layout_marginLeft="70dp"
         android:src="@drawable/ic_player"
         android:onClick="Num7"/>
 
@@ -94,9 +100,10 @@
         android:id="@+id/num8"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="110dp"
-        android:layout_above="@+id/num6"
+        android:layout_toLeftOf="@+id/line"
+        android:layout_alignBottom="@+id/num6"
+        android:layout_marginBottom="50dp"
+        android:layout_marginRight="25dp"
         android:src="@drawable/ic_player"
         android:onClick="Num8"/>
 
@@ -104,9 +111,10 @@
         android:id="@+id/num9"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="110dp"
-        android:layout_above="@+id/num6"
+        android:layout_toRightOf="@+id/line"
+        android:layout_alignBottom="@+id/num7"
+        android:layout_marginBottom="50dp"
+        android:layout_marginLeft="25dp"
         android:src="@drawable/ic_player"
         android:onClick="Num9"/>
 
@@ -114,10 +122,10 @@
         android:id="@+id/num10"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_alignBottom="@+id/num9"
-        android:layout_alignRight="@+id/num9"
-        android:layout_marginLeft="20dp"
-        android:layout_marginBottom="100dp"
+        android:layout_toLeftOf="@+id/line"
+        android:layout_alignBottom="@+id/num8"
+        android:layout_marginBottom="110dp"
+        android:layout_marginRight="35dp"
         android:src="@drawable/ic_player"
         android:onClick="Num10"/>
 
@@ -125,11 +133,12 @@
         android:id="@+id/num11"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_alignBottom="@+id/num8"
-        android:layout_alignRight="@+id/num8"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="100dp"
+        android:layout_toRightOf="@+id/line"
+        android:layout_alignBottom="@+id/num9"
+        android:layout_marginBottom="110dp"
+        android:layout_marginLeft="35dp"
         android:src="@drawable/ic_player"
         android:onClick="Num11"/>
+
 
 </RelativeLayout>
