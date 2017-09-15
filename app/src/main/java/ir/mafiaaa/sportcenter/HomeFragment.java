@@ -61,8 +61,8 @@ public class HomeFragment extends Fragment {
 
 
             ListItem listItem1 = new ListItem(
-                    "رتبه تیم" ,
-                    "1"
+                     "رتبه تیم شما : " + Team.getMyTeam().getName() ,
+                    String.valueOf(Team.getMyTeam().getRanking())
             );
 
             ListItem listItem2 = new ListItem(

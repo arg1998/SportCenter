@@ -45,6 +45,8 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
         setContentView(R.layout.navigation_drawer);
         Log.d("AmirReza" , "Welcome Activity part");
 
+        MyFavoriteTeamHandler favoriteTeamHandler = new MyFavoriteTeamHandler(this);
+        favoriteTeamHandler.getMyFavoriteTeam();
         BacktoryUser me = BacktoryUser.getCurrentUser();
 
         if (me == null)
@@ -140,7 +142,11 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
 
         int id = item.getItemId();
         if(id == R.id.LogOut){
-            BacktoryUser.logout();
+            try {
+                BacktoryUser.logoutInBackground();
+            }
+            catch (Exception e){e.printStackTrace();}
+
             Intent intent = new Intent(this , Register.class);
             startActivity(intent);
             this.finish();
