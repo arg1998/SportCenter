@@ -1,6 +1,7 @@
 package ir.mafiaaa.sportcenter;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
@@ -123,6 +124,8 @@ public class LoginFragment extends Fragment {
                             {
                                 btnLogin.setEnabled(false);
                                 Toast.makeText(getContext() , BacktoryUser.getCurrentUser().getFirstName() + "ورود موفقیت امیز بود ، خوش امدی " , Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(getActivity() , Main.class);
+                                startActivity(intent);
                             }
                             else if(response.code() == HttpStatusCode.Unauthorized.code())
                             {
