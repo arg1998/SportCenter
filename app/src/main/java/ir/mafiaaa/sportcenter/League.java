@@ -2,9 +2,16 @@ package ir.mafiaaa.sportcenter;
 
 import android.content.Context;
 import android.graphics.BitmapFactory;
+import android.util.Log;
+
+import com.backtory.java.internal.BacktoryCallBack;
+import com.backtory.java.internal.BacktoryObject;
+import com.backtory.java.internal.BacktoryQuery;
+import com.backtory.java.internal.BacktoryResponse;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 /**
  * Created by ARG on 9/15/2017 - 9:52 AM
@@ -195,6 +202,57 @@ public class League {
 
     public void sortTeamsBasedOnRanks() {
         Collections.sort(teams);
+    }
+
+
+    //// TODO: 9/15/2017 AMP
+    public  ArrayList<Player> getPlayer()
+    {
+        final ArrayList<Player> players = new ArrayList<>();
+        String mTeam = Team.getMyTeam().getName();
+
+
+        BacktoryQuery query = new BacktoryQuery("players");
+        query.whereEqualTo("team" , mTeam);
+        query.findInBackground(new BacktoryCallBack<List<BacktoryObject>>() {
+            @Override
+            public void onResponse(BacktoryResponse<List<BacktoryObject>> backtoryResponse) {
+                if (backtoryResponse.isSuccessful()) {
+                    for (int i = 0; i < backtoryResponse.body().size(); i++)
+                    {
+                        Player p = new Player();
+                        p.setName(backtoryResponse.body().get(i).getString("name"));
+                        String position = backtoryResponse.body().get(i).getString("post");
+                        Position playerPosition = Position.attacker;
+                        switch (position)
+                        {
+                            case "مهاجم":
+                                playerPosition = Position.attacker;
+                                break;
+                            case "هافبک":
+                                playerPosition = Position.halfBack;
+                                break;
+                            case "مدافع":
+                                playerPosition = Position.defence;
+                                break;
+                            case "دروازه بان":
+                                playerPosition = Position.goalKeeper;
+                                break;
+                        }
+                        p.setPosition(playerPosition);
+                        players.add(p);
+                    }
+                }
+                else
+                {
+                    Log.i("NoEmulators", "we're Fucked up now");
+                }
+            }
+        });
+
+
+
+        return players;
     }
 
 

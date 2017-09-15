@@ -13,6 +13,7 @@ import android.widget.CheckBox;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
+
 import com.backtory.java.HttpStatusCode;
 import com.backtory.java.internal.BacktoryCallBack;
 import com.backtory.java.internal.BacktoryObject;
@@ -22,10 +23,9 @@ import com.backtory.java.internal.BacktoryUser;
 public class SignUpFragment extends Fragment {
 
 
-     private void log(String s)
-     {
-         Log.i("NoEmulators", s);
-     }
+    private void log(String s) {
+        Log.i("NoEmulators", s);
+    }
 
     AppCompatEditText Name;
     AppCompatEditText lName;
@@ -43,7 +43,7 @@ public class SignUpFragment extends Fragment {
 
     private Button signUp;
 
-    String f_name , l_name , pass , email , repass , faveTeam;
+    String f_name, l_name, pass, email, repass, faveTeam;
 
 
     @Override
@@ -61,7 +61,7 @@ public class SignUpFragment extends Fragment {
         favoriteTeam = (Spinner) root.findViewById(R.id.favorite_team);
         nameLayout = (TextInputLayout) root.findViewById(R.id.FName_TextInputLayout);
         lNameLayout = (TextInputLayout) root.findViewById(R.id.LName_TextInputLayout);
-        emailLayout= (TextInputLayout) root.findViewById(R.id.Email_TextInputLayout);
+        emailLayout = (TextInputLayout) root.findViewById(R.id.Email_TextInputLayout);
         passLayout = (TextInputLayout) root.findViewById(R.id.PassS_TextInputLayout);
         rePassLayout = (TextInputLayout) root.findViewById(R.id.rePass_TextInputLayout);
         relativeLayout = (RelativeLayout) root.findViewById(R.id.SignUp);
@@ -70,11 +70,9 @@ public class SignUpFragment extends Fragment {
 
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
 
-                if (initializeText())
-                {
+                if (initializeText()) {
                     log("inside fucking IF statement");
                     signUp.setEnabled(false);
 
@@ -89,41 +87,17 @@ public class SignUpFragment extends Fragment {
                     log("user is created");
                     user.registerInBackground(new BacktoryCallBack<BacktoryUser>() {
                         @Override
-                        public void onResponse(BacktoryResponse<BacktoryUser> response)
-                        {
-                            if (response.isSuccessful())
-                            {
-                                BacktoryObject object = new BacktoryObject("users");
-                                object.put("userid" , BacktoryUser.getCurrentUser().getUserId());
-                                object.put("username" , BacktoryUser.getCurrentUser().getUsername());
-                                object.put("favoriteTeam" , faveTeam);
-                                object.saveInBackground(new BacktoryCallBack<Void>() {
-                                    @Override
-                                    public void onResponse(BacktoryResponse<Void> backtoryResponse) {
-                                        if (backtoryResponse.isSuccessful())
-                                        {
-                                            Toast.makeText(getContext() , "ایمیل خود را چک کنید و بعد ورود کنید" , Toast.LENGTH_SHORT).show();
-                                            signUp.setText("ایمیل خود را چک کنید");
-                                        }
-                                        else
-                                        {
-                                            Toast.makeText(getContext() , "مشکلی پیش امده، ارتباط با دیتابی برقرا نیست" , Toast.LENGTH_SHORT).show();
-                                            signUp.setText("مشکلی بوجود امده");
-                                        }
-                                    }
-                                });
-
-
-
-                            }
-                            else if (response.code() == HttpStatusCode.Conflict.code())
-                            {
-                                Toast.makeText(getContext() , "این ایمیل قبلا ثبت شده است" , Toast.LENGTH_SHORT).show();
+                        public void onResponse(BacktoryResponse<BacktoryUser> response) {
+                            if (response.isSuccessful()) {
+                                Toast.makeText(getContext(), "ایمیل خود را چک کنید و بعد ورود کنید", Toast.LENGTH_SHORT).show();
+                                signUp.setText("ایمیل خود را چک کنید");
+                                MyFavoriteTeamHandler m = new MyFavoriteTeamHandler(getContext());
+                                m.saveMyFavoriteTeam(faveTeam);
+                            } else if (response.code() == HttpStatusCode.Conflict.code()) {
+                                Toast.makeText(getContext(), "این ایمیل قبلا ثبت شده است", Toast.LENGTH_SHORT).show();
                                 signUp.setEnabled(true);
-                            }
-                            else
-                            {
-                                Toast.makeText(getContext() , "ثبت نام با مشکل مواجه شد.لطفا دوباره تلاش کنید" , Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(getContext(), "ثبت نام با مشکل مواجه شد.لطفا دوباره تلاش کنید", Toast.LENGTH_SHORT).show();
                                 signUp.setEnabled(true);
                             }
                         }
@@ -135,8 +109,7 @@ public class SignUpFragment extends Fragment {
         return root;
     }
 
-    private boolean initializeText()
-    {
+    private boolean initializeText() {
         log("initializeText Method");
 
         f_name = Name.getText().toString();
@@ -147,33 +120,22 @@ public class SignUpFragment extends Fragment {
         faveTeam = favoriteTeam.getSelectedItem().toString();
 
 
-        if (f_name.equals("") || l_name.equals("") || pass.equals("") || email.equals("") || faveTeam.startsWith("انتخاب"))
-        {
-            Toast.makeText(getContext() , "تمامی فیلد هارا پر کنید" , Toast.LENGTH_SHORT).show();
+        if (f_name.equals("") || l_name.equals("") || pass.equals("") || email.equals("") || faveTeam.startsWith("انتخاب")) {
+            Toast.makeText(getContext(), "تمامی فیلد هارا پر کنید", Toast.LENGTH_SHORT).show();
             return false;
-        }
-        else if (!pass.equals(repass))
-        {
-            Toast.makeText(getContext() , "رمز عبور های وارد شده یکی نیستند" , Toast.LENGTH_SHORT).show();
+        } else if (!pass.equals(repass)) {
+            Toast.makeText(getContext(), "رمز عبور های وارد شده یکی نیستند", Toast.LENGTH_SHORT).show();
             return false;
-        }
-        else if (!email.contains("@") || !email.contains("."))
-        {
-            Toast.makeText(getContext() , "ایمیل وارد شده معتبر نیست" , Toast.LENGTH_SHORT).show();
+        } else if (!email.contains("@") || !email.contains(".")) {
+            Toast.makeText(getContext(), "ایمیل وارد شده معتبر نیست", Toast.LENGTH_SHORT).show();
             return false;
-        }
-        else if (pass.length() < 4)
-        {
-            Toast.makeText(getContext() , "حد اقل طول رمز عبور 4 کاراکتر است" , Toast.LENGTH_SHORT).show();
+        } else if (pass.length() < 4) {
+            Toast.makeText(getContext(), "حد اقل طول رمز عبور 4 کاراکتر است", Toast.LENGTH_SHORT).show();
             return false;
-        }
-        else if (!checkbox_larws.isChecked())
-        {
-            Toast.makeText(getContext() , "برای استفاده باید قوانین را راعایت کنید" , Toast.LENGTH_SHORT).show();
+        } else if (!checkbox_larws.isChecked()) {
+            Toast.makeText(getContext(), "برای استفاده باید قوانین را راعایت کنید", Toast.LENGTH_SHORT).show();
             return false;
-        }
-        else
-        {
+        } else {
             return true;
         }
 

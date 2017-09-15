@@ -3,6 +3,7 @@ package ir.mafiaaa.sportcenter;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.AppCompatEditText;
@@ -125,15 +126,49 @@ public class LoginFragment extends Fragment {
                                 btnLogin.setEnabled(false);
                                 Toast.makeText(getContext(), BacktoryUser.getCurrentUser().getFirstName() + "ورود موفقیت امیز بود ، خوش امدی ", Toast.LENGTH_SHORT).show();
 
-                                BacktoryQuery query = new BacktoryQuery("users");
+
+                                final BacktoryQuery query = new BacktoryQuery("users");
                                 query.whereEqualTo("userid", BacktoryUser.getCurrentUser().getUserId());
-                                query.findInBackground(new BacktoryCallBack<List<BacktoryObject>>() {
+                                query.findInBackground(new BacktoryCallBack<List<BacktoryObject>>()
+                                {
                                     @Override
-                                    public void onResponse(BacktoryResponse<List<BacktoryObject>> backtoryResponse) {
+                                    public void onResponse(BacktoryResponse<List<BacktoryObject>> backtoryResponse)
+                                    {
                                         if (backtoryResponse.isSuccessful()) {
                                             String userFaveTeam = backtoryResponse.body().get(0).getString("favoriteTeam");
+
+                                            if (userFaveTeam == null)
+                                            {
+                                                BacktoryObject o = new BacktoryObject("users");
+                                                o.put("favoriteTeam" ,Team.getMyTeam().getName());
+                                                o.put("userid" , BacktoryUser.getCurrentUser().getUserId());
+                                                o.put("username" , BacktoryUser.getCurrentUser().getUsername());
+
+                                                o.saveInBackground(new BacktoryCallBack<Void>() {
+                                                    @Override
+                                                    public void onResponse(BacktoryResponse<Void> backtoryResponse) {
+                                                        if(backtoryResponse.isSuccessful())
+                                                        {
+                                                            Toast.makeText(getContext(), "همه چی دیگه ناموسا تمومه", Toast.LENGTH_SHORT).show();
+                                                        }
+                                                        else
+                                                        {
+                                                            Toast.makeText(getContext(), "مشکل در برقرای ارتباط با دیتابیس", Toast.LENGTH_SHORT).show();
+
+                                                        }
+                                                    }
+                                                });
+
+                                            }
+                                            else
+                                            {
+                                                MyFavoriteTeamHandler m = new MyFavoriteTeamHandler(getContext());
+                                                m.saveMyFavoriteTeam(userFaveTeam);
+                                            }
                                             startNextActivity();
-                                        } else {
+                                        }
+                                        else
+                                        {
                                             Toast.makeText(getContext(), "مشکلی پیش امده، ارتباط با دیتابیس برقرار نیست", Toast.LENGTH_SHORT).show();
                                         }
                                     }
